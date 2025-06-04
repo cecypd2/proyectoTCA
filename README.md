@@ -23,7 +23,7 @@ Este proyecto utiliza un pipeline de procesamiento y modelado con **Kedro**, y r
 project/
 │
 ├── data/
-│   └── (archivos parquet)
+│   └── (archivos de datos y modelo entrenado)
 │
 ├── conf/
 │   ├── base/
@@ -31,10 +31,10 @@ project/
 │
 ├── src/
 │   ├── pipeline/           # Lógica Kedro
-│   ├── dashboard.py        # Streamlit Dashboard
-│   ├── api.py              # FastAPI API
-│   └── requirements.txt
-│
+|
+│── dashboard.py        # Streamlit Dashboard
+│── api.py              # FastAPI API
+│── requirements.txt
 ├── Dockerfile
 ├── startup.sh
 └── README.md
@@ -123,12 +123,7 @@ Esto permite separar el cómputo del almacenamiento y mantener los datos **segur
 
 - El modelo y los datos están almacenados en Azure Blob Storage, lo que asegura:
   - **Cifrado en reposo y en tránsito**
-  - **Control de acceso mediante SAS o RBAC**
+  - **Control de acceso**
   - **Redundancia y alta disponibilidad**
-- Las variables sensibles como la cadena de conexión están ocultas en variables de entorno en Azure.
+- Las variables sensibles como la cadena de conexión están ocultas en variables de entorno.
 
----
-
-## 📬 Contacto
-
-Para dudas o sugerencias, puedes abrir un issue o contactarme a través de [tu-email].
