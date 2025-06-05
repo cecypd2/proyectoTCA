@@ -10,6 +10,9 @@ Este proyecto utiliza un pipeline de procesamiento y modelado con **Kedro**, y r
 - Azure CLI
 - Docker
 - Kedro
+- Tensorflow
+- Streamlit
+- FastAPI
 - Cuenta de Azure con permisos para:
   - Storage Account
   - Container Registry
@@ -54,7 +57,7 @@ project/
    ```bash
    pip install -r src/requirements.txt
    ```
-
+  Es esencial agregar los archivos crudos en data/01_raw para asegurar la ejecución.
 3. Corre el pipeline de Kedro:
    ```bash
    kedro run
