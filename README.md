@@ -96,7 +96,7 @@ Esto permite separar el cómputo del almacenamiento y mantener los datos **segur
    docker build -t streamlitapp .
    ```
 
-2. Loguéate en Azure Container Registry:
+2. Crea un Container Registry y loguéate en Azure Container Registry:
    ```bash
    az acr login --name tuacr
    ```
@@ -113,7 +113,15 @@ Esto permite separar el cómputo del almacenamiento y mantener los datos **segur
 
 1. Crea una instancia de contenedor:
    ```bash
-   az container create      --resource-group mygroup      --name streamlit-container      --image tuacr.azurecr.io/streamlitapp:v1      --cpu 1      --memory 1.5      --registry-login-server tuacr.azurecr.io      --registry-username <usuario>      --registry-password <contraseña>      --ports 8000 8501      --dns-name-label streamlitappdemo      --environment-variables AZURE_STORAGE_CONNECTION_STRING="<conn_str>"
+   az container create 
+   --resource-group mygroup 
+   --name streamlit-container
+   --image tuacr.azurecr.io/streamlitapp:v1
+   --cpu 2
+   --memory 3
+   --ports 8000 8501
+   --dns-name-label streamlitappdemo
+   --environment-variables AZURE_STORAGE_CONNECTION_STRING="<conn_str>"
    ```
 
 2. Accede al dashboard:
